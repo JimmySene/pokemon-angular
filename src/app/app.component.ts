@@ -4,11 +4,11 @@ import { Pokemon } from './pokemon';
 
 @Component({
   selector: 'app-root',
-  template: `<h1>Liste de Pokémons</h1>`,
+  templateUrl: './app.component.html',
   styles: []
 })
 export class AppComponent implements OnInit {
-  pokemons = POKEMONS;
+  pokemons: Pokemon[] = POKEMONS;
 
   ngOnInit() {
     console.table(this.pokemons);
