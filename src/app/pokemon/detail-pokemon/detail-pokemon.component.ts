@@ -12,7 +12,7 @@ import { Pokemon } from '../pokemon';
 export class DetailPokemonComponent implements OnInit {
 
   pokemonList: Pokemon[];
-  pokemon: Pokemon | undefined;
+  pokemon?: Pokemon;
 
   constructor(private route: ActivatedRoute, private router: Router) { }
 

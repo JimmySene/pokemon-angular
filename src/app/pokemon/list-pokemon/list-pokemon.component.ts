@@ -12,20 +12,12 @@ import { Pokemon } from '../pokemon';
 export class ListPokemonComponent implements OnInit {
 
   pokemons: Pokemon[] = POKEMONS;
-  pokemonSelected: Pokemon | undefined;
+  pokemonSelected?: Pokemon;
 
   constructor(private router: Router) { }
 
   ngOnInit() {
     console.table(this.pokemons);
-  }
-
-  selectPokemon(pokemon: Pokemon) {
-    console.log(`Vous avez cliqué sur le pokémon ${pokemon.name}`);
-  }
-
-  searchPokemon(pokemonId: string) {
-    this.pokemonSelected = this.pokemons[+pokemonId];
   }
 
   goToPokemon(pokemon: Pokemon) {
