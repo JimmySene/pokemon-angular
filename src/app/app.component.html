@@ -1,9 +1,23 @@
-<h1>Liste de Pokémons</h1>
+<h1 class="center">Liste de Pokémons</h1>
 
-Recherche selon l'index : <input #input type="number" (keyup.enter)="searchPokemon(input.value)">
+<div class="container">
+  <div class="row">
 
-<p>Vous avez selectionné le pokémon : {{ pokemonSelected?.name }}</p>
+    <div *ngFor="let pokemon of pokemons" class="col m4 s6" (click)="selectPokemon(pokemon)">
+      <div class="card horizontal">
+        <div class="card-image">
+          <img [src]="pokemon.picture" [alt]="pokemon.name">
+        </div>
+        <div class="card-stacked">
+          <div class="card-content">
+            <p class="card-title">{{ pokemon.name }}</p>
+            <p><small>{{ pokemon.created }}</small></p>
+          </div>
+        </div>
+      </div>
 
-<ul *ngFor="let pokemon of pokemons">
-  <li (click)="selectPokemon(pokemon)">{{ pokemon.name }}</li>
-</ul>
+
+    </div>
+
+  </div>
+</div>
