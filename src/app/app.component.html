@@ -1,5 +1,9 @@
 <h1>Liste de Pokémons</h1>
 
+Recherche selon l'index : <input #input type="number" (keyup.enter)="searchPokemon(input.value)">
+
+<p>Vous avez selectionné le pokémon : {{ pokemonSelected?.name }}</p>
+
 <ul *ngFor="let pokemon of pokemons">
   <li (click)="selectPokemon(pokemon)">{{ pokemon.name }}</li>
 </ul>
