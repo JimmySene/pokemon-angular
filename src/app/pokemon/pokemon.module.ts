@@ -6,6 +6,7 @@ import { ListPokemonComponent } from './list-pokemon/list-pokemon.component';
 import { DetailPokemonComponent } from './detail-pokemon/detail-pokemon.component';
 import { PageNotFoundComponent } from '../page-not-found/page-not-found.component';
 import { RouterModule } from '@angular/router';
+import { PokemonService } from './pokemon.service';
 
 const pokemonRoutes = [
   { path: 'pokemons', component: ListPokemonComponent },
@@ -23,6 +24,9 @@ const pokemonRoutes = [
   imports: [
     CommonModule,
     RouterModule.forChild(pokemonRoutes)
+  ],
+  providers: [
+    PokemonService
   ]
 })
 export class PokemonModule { }
